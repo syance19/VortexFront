@@ -1,0 +1,93 @@
+<p-card>
+  <form #productForm="ngForm">
+    <div class="p-fluid">
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input1"    type="text" pInputText style="width:300px" [(ngModel)]="newProduct.proId"
+            name="idPro" required #idPro="ngModel">
+          <label for="float-input1">ID Product</label>
+          <div class="alert alert-danger" *ngIf="idPro.invalid && (idPro.dirty || idPro.touched)">
+            <div *ngIf="idPro.errors.required">
+              Id Product is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input1" type="text" pInputText style="width:300px" [(ngModel)]="newProduct.image"
+            name="img" required #img="ngModel">
+          <label for="float-input1">Imagen provisional</label>
+          <div class="alert alert-danger" *ngIf="img.invalid && (img.dirty || img.touched)">
+            <div *ngIf="img.errors.required">
+              Id Product is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input1" type="text" pInputText style="width:300px" [(ngModel)]="newProduct.name"
+            name="name" required #name="ngModel">
+          <label for="float-input1">Name</label>
+          <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors.required">
+              Name is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input3" type="text" pInputText style="width:300px" [(ngModel)]="newProduct.detail"
+            name="detail" required #detail="ngModel">
+          <label for="float-input3">Detail</label>
+          <div class="alert alert-danger"
+            *ngIf="detail.invalid && (detail.dirty || detail.touched)">
+            <div *ngIf="detail.errors.required">
+              Detail is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <br>
+      <div class="p-grid" style="width: 300px;">
+        &nbsp;&nbsp;
+      <div class="p-field">
+        <span class="p-float-label">
+
+            <p-inputNumber id="float-input2"   inputId="integeronly" [(ngModel)]="newProduct.price"
+            name="price" required #price="ngModel"
+            ></p-inputNumber>
+          <label for="float-input2">Price</label>
+          <div class="alert alert-danger" *ngIf="price.invalid && (price.dirty || price.touched)">
+            <div *ngIf="price.errors.required">
+              Price is required
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+
+      <br>
+<div class="p-grid">
+  &nbsp;&nbsp;
+  <p-selectButton    name="enable" [options]="stateOptions" [(ngModel)]="newProduct.enable" optionLabel="label" optionValue="value" styleClass="{width;300px}" ></p-selectButton>
+</div>
+
+     </div>
+      <br>
+
+
+
+      <button  pButton    type="button" (click)='update()' label="Editar" [disabled]="!productForm.valid"></button>
+
+
+
+
+
+
+  </form>
+  </p-card>
+
+

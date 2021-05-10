@@ -1,0 +1,7 @@
+
+<p-menubar [model]="items" *ngIf="isAdmin()">
+  <ng-template pTemplate="end">
+    <button pButton pRipple type="button" label="LogOut" class="p-button-rounded p-button-danger" icon="pi pi-fw pi-power-off" (click)="logout()"></button>
+</ng-template>
+
+</p-menubar>

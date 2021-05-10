@@ -1,0 +1,43 @@
+<div class="login-panel">
+
+  <div class="p-grid p-nogutter p-justify-center p-align-center" style="height:100%">
+    <div class="p-xl-3 p-lg-6 p-md-8 p-sm-10">
+      <p-panel >
+
+        <div class="p-grid p-justify-center p-align-center">
+          <div class="">
+            <img src="assets/images/Vortexbird2x.png" class="login-logo">
+          </div>
+          <div class="p-col-12">
+            <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+              <input id="input-username" type="text" size="30" pInputText [(ngModel)]="ema"
+                placeholder="Enter User name">
+            </div>
+          </div>
+          <div class="p-col-12">
+            <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+              <input id="input-password" type="password" size="30" pInputText [(ngModel)]="pass"
+                placeholder="Enter Password">
+            </div>
+          </div>
+          <div class="p-col-12 text-center">
+            <a>Forgot Password?</a>
+          </div>
+        </div>
+        <div class="p-grid">
+          <div class="p-col-6">
+            <button pButton type="button"  class="ui-button-raised" label="Login" (click)="login()"
+              ></button>
+          </div>
+          <div class="p-col-6">
+            <button pButton type="button"  class="ui-button-raised" label="Register"
+              [routerLink]="['/register']"></button>
+          </div>
+        </div>
+      </p-panel>
+
+    </div>
+  </div>
+</div>

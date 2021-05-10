@@ -1,0 +1,40 @@
+<p-card>
+  <form #paymentForm="ngForm">
+
+
+
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input1" type="text" pInputText style="width:300px" [(ngModel)]="newPayment.name"
+            name="name" required #name="ngModel">
+          <label for="float-input1">Name</label>
+          <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors.required">
+              Name is required
+            </div>
+          </div>
+        </span>
+      </div>
+  <div>
+      <p-selectButton name="enable" [options]="stateOptions" [(ngModel)]="newPayment.enable" optionLabel="label" optionValue="value" ></p-selectButton>
+      <br>
+    </div>
+
+      <br>
+
+
+
+      <br>
+
+
+    <button pButton type="button"   (click)="create()" label="Create" *ngIf="!newPayment.payId else elseBlock"  [disabled]="!paymentForm.valid"></button>
+    <ng-template #elseBlock>
+      <button  pButton    type="button" (click)='update()' label="Editar" [disabled]="!paymentForm.valid"></button>
+    </ng-template>
+
+
+
+
+
+  </form>
+  </p-card>

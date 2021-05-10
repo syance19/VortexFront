@@ -1,0 +1,89 @@
+<p-card>
+  <form #customerForm="ngForm">
+    <div class="p-fluid">
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input1" type="text" pInputText style="width:300px" [(ngModel)]="newCustomer.email"
+            name="email" required #email="ngModel">
+          <label for="float-input1">Email</label>
+          <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors.required">
+              Email is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <br>
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input2" type="text" pInputText style="width:300px" [(ngModel)]="newCustomer.name" name="name"
+            required #name="ngModel">
+          <label for="float-input2">Names</label>
+          <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors.required">
+              Names are required
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input3" type="text" pInputText style="width:300px" [(ngModel)]="newCustomer.phone"
+            name="phone" required #phone="ngModel">
+          <label for="float-input3">Phone</label>
+          <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+            <div *ngIf="phone.errors.required">
+              Phone is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <br>
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input4" type="text" pInputText style="width:300px" [(ngModel)]="newCustomer.address"
+            name="address" required #address="ngModel">
+          <label for="float-input4">Address</label>
+          <div class="alert alert-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
+            <div *ngIf="address.errors.required">
+              Addres is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="p-field">
+        <span class="p-float-label">
+          <input id="float-input5" type="text" pInputText style="width:300px" [(ngModel)]="newCustomer.role" name="role"
+            required #role="ngModel" placeholder="Admin or user" maxlength="1">
+          <label for="float-input5"></label>
+          <div class="alert alert-danger" *ngIf="role.invalid && (role.dirty || role.touched)">
+            <div *ngIf="role.errors.required">
+              Role is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="p-field">
+        <span class="p-float-label">
+          <p-password [(ngModel)]="newCustomer.token" name="token" required #token="ngModel"  placeholder="Token"></p-password>
+          <div class="alert alert-danger" *ngIf="token.invalid && (token.dirty || token.touched)">
+            <div *ngIf="token.errors.required">
+              Token is required
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="p-grid">
+        &nbsp;
+      <p-selectButton name="enable" [options]="stateOptions" [(ngModel)]="newCustomer.enable" optionLabel="label"
+        optionValue="value"></p-selectButton>
+      </div>
+    </div>
+    <br>
+
+    <button pButton type="button"   (click)="create()" label="Create"   [disabled]="!customerForm.valid"></button>
+
+
+
+  </form>
+</p-card>

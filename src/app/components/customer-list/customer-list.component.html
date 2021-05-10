@@ -1,0 +1,111 @@
+
+<p-card >
+  <div class="card border-primary mb-3">
+    <div class="card-header">Customers</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">List of customers</h5>
+      <div class="my-2 text-left">
+
+
+      </div>
+      <p-table #dt1 [value]="listCustomers" dataKey="id"
+      styleClass="p-datatable-customers p-datatable-gridlines"
+
+      [globalFilterFields]="['email','name','address','phone','enable','rol']"
+      [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+      <ng-template pTemplate="caption">
+          <div class="p-d-flex">
+              <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+
+
+              <span class="p-input-icon-left p-ml-auto">
+                  <i class="pi pi-search"></i>
+                  <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+              </span>
+          </div>
+      </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name">
+            <div class="p-d-flex p-jc-between p-ai-center">
+                Names
+                <p-columnFilter  type="text" field="names" display="menu"></p-columnFilter>
+                <p-sortIcon field="names"></p-sortIcon>
+            </div>
+        </th>
+        <th pSortableColumn="phone">
+          <div class="p-d-flex p-jc-between p-ai-center">
+              Phone
+              <p-columnFilter  type="text" field="phone" display="menu"></p-columnFilter>
+              <p-sortIcon field="phone"></p-sortIcon>
+          </div>
+      </th>
+
+    <th pSortableColumn="email">
+      <div class="p-d-flex p-jc-between p-ai-center">
+          Email
+          <p-columnFilter  type="text" field="email" display="menu"></p-columnFilter>
+          <p-sortIcon field="email"></p-sortIcon>
+      </div>
+  </th>
+  <th pSortableColumn="address">
+    <div class="p-d-flex p-jc-between p-ai-center">
+        Address
+        <p-columnFilter  type="text" field="address" display="menu"></p-columnFilter>
+        <p-sortIcon field="address"></p-sortIcon>
+    </div>
+</th>
+  <th pSortableColumn="enable">
+    <div class="p-d-flex p-jc-between p-ai-center">
+        Enable
+        <p-columnFilter  type="text" field="enable" display="menu"></p-columnFilter>
+        <p-sortIcon field="enable"></p-sortIcon>
+    </div>
+</th>
+<th pSortableColumn="rol">
+  <div class="p-d-flex p-jc-between p-ai-center">
+      Rol
+      <p-columnFilter  type="text" field="rol" display="menu"></p-columnFilter>
+      <p-sortIcon field="rol"></p-sortIcon>
+  </div>
+</th>
+<th>
+  Acciones
+</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pc>
+    <tr >
+          <td>{{ pc.name }}</td>
+          <td>{{ pc.phone }}</td>
+          <td>{{ pc.email }}</td>
+          <td>{{ pc.address }}</td>
+          <td>{{ pc.enable}}</td>
+          <td>{{ pc.role }}</td>
+          <td>
+            <span class="p-buttonset">
+              <button pButton type="button" label="Delete" (click)="delete(pc.email)"    icon="pi pi-trash" ></button>
+              <button pButton type="button" label="Edit" icon="pi pi-user-edit"   (click)="edit(pc.email)" ></button>
+
+          </span>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+</div>
+</p-card>
+
+
+
+
+
+
+
+
+
+
+
+
+

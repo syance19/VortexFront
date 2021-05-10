@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "vortextest-d05fd": {
+      "hosting": {
+        "vortexFront": [
+          "vortextest-d05fd"
+        ]
+      }
+    }
+  }
+}

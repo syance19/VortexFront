@@ -1,0 +1,70 @@
+<div class="user-regisration">
+  <div class="p-grid p-nogutter p-justify-center p-align-center" style="height:100%">
+    <div class="p-xl-3 p-lg-6 p-md-8 p-sm-10">
+      <form  >
+        <p-panel header="Registration">
+          <div class="p-grid p-justify-center p-align-center">
+            <div >
+              <img src="assets/images/Vortexbird2x.png" class="login-logo">
+            </div>
+            <div class="p-grid">
+            <div class="p-col-6 p-offset-3" >
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input id="username"  size="20" pInputText
+                 name="username" placeholder="Name" required  [(ngModel)]="newRegister.name">
+              </div>
+            </div>
+            <div class="p-col-12">
+
+            </div>
+            <div class="p-col-6">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                <input id="addres" name="addres" size="20" pInputText
+                  placeholder="Addres" required  [(ngModel)]="newRegister.address">
+              </div>
+            </div>
+
+            <div class="p-col-6">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
+                <input id="email" name="email" type="email" size="20" pInputText
+                  placeholder="Email Id" required  [(ngModel)]="newRegister.email">
+              </div>
+            </div>
+
+            <div class="p-col-6">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
+                <input id="phone" name="phone" type="email" size="20" pInputText
+                  placeholder="Phone" required  [(ngModel)]="newRegister.phone">
+              </div>
+            </div>
+            <div class="p-col-6">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
+                <input id="password" name="password" type="email" size="20" pInputText
+                  placeholder="Cotraseña" required [(ngModel)]="newRegister.token">
+              </div>
+            </div>
+
+            <div class="p-col-12" >
+
+            </div>
+          </div>
+        </div>
+          <div class="p-grid">
+            <div class="p-col-6 p-offset-4">
+              <button pButton type="button" label="Register" class="ui-button-raised"
+              (click)="register()"
+               ></button>
+            </div>
+
+          </div>
+        </p-panel>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+:host ::ng-deep .p-password {
+  width: 19rem;
+}
+
+ .p-selectButton {
+  width: 19rem !important;
+}

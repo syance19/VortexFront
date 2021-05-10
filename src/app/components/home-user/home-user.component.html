@@ -1,0 +1,34 @@
+
+<p-splitButton label="ACTIONS" icon="pi pi-plus"  [model]="items"></p-splitButton>
+
+
+<div class="container">
+  <br>
+  <br>
+  <h1 style="text-align: center;">Productos Disponibles</h1>
+  <div class="form-group">
+    <input  pInputText name="like" id="like" placeholder="Search by name" [(ngModel)]="like" class="form-control" size="30" (keyup)="busqueda()">
+
+  </div>
+  <hr>
+
+  <div class="p-grid"    *ngIf="listProducts; else vacio">
+    <div class="p-col" *ngFor="let products of listProducts">
+        <p-card header="{{products.name}}" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+          <ng-template pTemplate="header" >
+          </ng-template>
+          <p>{{products.detail}}</p>
+          <p>{{products.price}}</p>
+          <div class="form-group col-md-6">
+            <button pButton type="button" label="Agregar al carrito"  icon="pi pi-shopping-cart"  (click)="addProduct(products.proId,products.name,cantidad.value)" ></button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+          <p-inputNumber #cantidad mode="decimal"   [showButtons]="true" inputId="minmax-buttons" [min]="0" ></p-inputNumber>
+
+        </div>
+        </p-card>
+    </div>
+  </div>
+  <ng-template #vacio>
+    <h3 style="text-align: center;">No se encontraron productos</h3>
+  </ng-template>
+</div>
