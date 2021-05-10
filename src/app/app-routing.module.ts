@@ -1,3 +1,4 @@
+import { CustomerCartComponent } from './components/customer-cart/customer-cart.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { CustomerEditComponent } from './components/customer-edit/customer-edit.component';
 import { NgModule } from '@angular/core';
@@ -27,7 +28,9 @@ const routes: Routes=[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'home', component:HeaderComponent},
-  {path:'home-user', component:HomeUserComponent}
+  {path:'home-user', component:HomeUserComponent},
+  {path:'customer/cart', component:CustomerCartComponent}
+
 
 ]
 

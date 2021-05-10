@@ -8,6 +8,7 @@
         <p-card header="{{products.name}}" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
           <ng-template pTemplate="header" >
           </ng-template>
+          <img [src]="products.image" width="45%" height="85%" >
           <p>{{products.detail}}</p>
           <p>{{products.price}}</p>
           <div class="form-group col-md-6">

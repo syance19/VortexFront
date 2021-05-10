@@ -38,6 +38,7 @@ import { environment } from '../environments/environment';
 import { HomeUserComponent } from './components/home-user/home-user.component';
 import { CustomerEditComponent } from './components/customer-edit/customer-edit.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { CustomerCartComponent } from './components/customer-cart/customer-cart.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     HomeUserComponent,
     CustomerEditComponent,
     ProductEditComponent,
+    CustomerCartComponent,
 
 
   ],

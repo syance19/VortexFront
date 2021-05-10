@@ -25,13 +25,9 @@ export class HomeUserComponent implements OnInit {
   ngOnInit() {
     this.findAllProducts();
     this.items = [
-      {label: 'Update', icon: 'pi pi-refresh', command: () => {
-          ;
-      }},
-      {label: 'Delete', icon: 'pi pi-times', command: () => {
-          ;
-      }},
-      {label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io'},
+
+
+      {label: 'Ver carrito', icon: 'pi pi-info', routerLink:['/customer/cart']},
       {separator:true},
       {label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup']},
       {label:'Logout',icon:'pi pi-fw pi-power-off',command:() =>{

@@ -30,4 +30,13 @@ export class CartServiceService {
 
     return this.httpClient.post(this.url + '/addProduct', addShpr);
   }
+  public findShprByCarId(carId: number): Observable<any> {
+
+    return this.httpClient.get(this.url + '/findShprByCarId/' + carId);
+  }
+
+  public removeProduct(carId: number, proId: string): Observable<any> {
+
+    return this.httpClient.delete(this.url + '/removeProduct/' + carId + '/' + proId);
+  }
 }

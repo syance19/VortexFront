@@ -56,7 +56,7 @@ edit(id:string):void{
         'The customer has been deleted.',
         'success'
       )
-      this.router.navigate(['/customer/list']);
+      this.router.navigate(['/']);
     }
   })
  }
