@@ -17,10 +17,10 @@
         <span class="p-float-label">
           <input id="float-input1" type="text" pInputText style="width:300px" [(ngModel)]="newProduct.image"
             name="img" required #img="ngModel">
-          <label for="float-input1">Imagen provisional</label>
+          <label for="float-input1">Url Image</label>
           <div class="alert alert-danger" *ngIf="img.invalid && (img.dirty || img.touched)">
             <div *ngIf="img.errors.required">
-              Id Product is required
+              Url image is required
             </div>
           </div>
         </span>
@@ -69,7 +69,8 @@
       </div>
     </div>
 
-      <br>
+
+      <h5>Enable</h5>
 <div class="p-grid">
   &nbsp;&nbsp;
   <p-selectButton    name="enable" [options]="stateOptions" [(ngModel)]="newProduct.enable" optionLabel="label" optionValue="value" styleClass="{width;300px}" ></p-selectButton>

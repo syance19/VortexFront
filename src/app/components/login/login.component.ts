@@ -69,7 +69,14 @@ export class LoginComponent implements OnInit {
           }
         }
       }
-    )
+    ).catch((error) => {
+      swal.fire(
+        'Error',
+        'Username or password invalid',
+        'error'
+      )
+
+    });
   }
 
 

@@ -30,8 +30,6 @@ const routes: Routes=[
   {path:'home', component:HeaderComponent},
   {path:'home-user', component:HomeUserComponent},
   {path:'customer/cart', component:CustomerCartComponent}
-
-
 ]
 
 @NgModule({
